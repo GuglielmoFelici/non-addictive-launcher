@@ -1,31 +1,22 @@
-import json
+
 import sys
 import launcher
 from game import Game
-import shutil
 from util import fail
 import logging
+import datasource
 
-DATASOURCE_NAME = 'games.json'
-
-
-shutil.copy(DATASOURCE_NAME, f'{DATASOURCE_NAME}.bak')
 logging.basicConfig(level=logging.DEBUG)
 
-with open(DATASOURCE_NAME) as dataSource:
-    games = json.load(dataSource)
-
-errorMsg = f'Specify a game from this list: \n{" ".join([game for game in games])}'
+errorMsg = f'Specify a game from this list: \n{" ".join([game for game in datasource.getGames()])}'
 if len(sys.argv) != 2:
     fail(errorMsg)
 
-gameName = sys.argv[1]
-if gameName not in games:
+game = datasource.getGame(sys.argv[1])
+if not game:
     fail(errorMsg)
-game = Game(games[gameName])
 game = launcher.launch_game(game)
 if not game:
     fail()
-games[gameName].update(game.toDict())
-with open(DATASOURCE_NAME, 'w') as dataSource:
-    json.dump(games, dataSource, indent=4)
+else:
+    datasource.saveGame(game)

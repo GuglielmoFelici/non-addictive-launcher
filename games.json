@@ -1,17 +1,17 @@
 {
     "test": {
-        "name": "Test",
+        "name": "test",
         "path": "/usr/bin/sleep",
         "arguments": [
             "3"
         ],
         "max_weekly_seconds": 300,
-        "current_weekly_seconds": 301,
-        "total_seconds": 301,
+        "current_weekly_seconds": 298,
+        "total_seconds": 298,
         "last_reset": "2021-03-12"
     },
     "valorant": {
-        "name": "Valorant",
+        "name": "valorant",
         "path": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe",
         "arguments": [
             "--launch-product=valorant",

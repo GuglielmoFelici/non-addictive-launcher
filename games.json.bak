@@ -1,13 +1,13 @@
 {
     "test": {
-        "name": "Test",
+        "name": "Valorant",
         "path": "/usr/bin/sleep",
         "arguments": [
             "3"
         ],
-        "max_weekly_seconds": 300,
-        "current_weekly_seconds": 301,
-        "total_seconds": 301,
+        "max_weekly_seconds": 50400,
+        "current_weekly_seconds": 50401,
+        "total_seconds": 50401,
         "last_reset": "2021-03-12"
     },
     "valorant": {
