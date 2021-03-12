@@ -1,0 +1,12 @@
+{
+    "valorant": {
+        "path": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe",
+        "arguments": [
+            "--launch-product=valorant",
+            "--launch-patchline=live"
+        ],
+        "max_weekly_seconds": 50400,
+        "current_weekly_seconds": 50400,
+        "total_seconds": 0
+    }
+}
