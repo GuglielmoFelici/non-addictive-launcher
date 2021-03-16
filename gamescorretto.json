@@ -12,7 +12,7 @@
     },
     "valorant": {
         "name": "valorant",
-        "path": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe",
+        "path": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Riot Games\\VALORANT.lnk",
         "arguments": [
             "--launch-product=valorant",
             "--launch-patchline=live"

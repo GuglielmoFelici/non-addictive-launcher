@@ -1,25 +1,25 @@
 {
     "test": {
-        "name": "Valorant",
+        "name": "test",
         "path": "/usr/bin/sleep",
         "arguments": [
             "3"
         ],
-        "max_weekly_seconds": 50400,
-        "current_weekly_seconds": 50401,
-        "total_seconds": 50401,
+        "max_weekly_seconds": 300,
+        "current_weekly_seconds": 298,
+        "total_seconds": 298,
         "last_reset": "2021-03-12"
     },
     "valorant": {
-        "name": "Valorant",
+        "name": "valorant",
         "path": "C:\\Riot Games\\Riot Client\\RiotClientServices.exe",
         "arguments": [
             "--launch-product=valorant",
             "--launch-patchline=live"
         ],
-        "max_weekly_seconds": 50400,
-        "current_weekly_seconds": 50400,
-        "total_seconds": 4,
-        "last_reset": "1970-01-01"
+        "max_weekly_seconds": 36000,
+        "current_weekly_seconds": 9741,
+        "total_seconds": 38822,
+        "last_reset": "2021-03-15"
     }
 }

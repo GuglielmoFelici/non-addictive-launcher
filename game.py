@@ -1,6 +1,11 @@
 import util
 import datetime
 import logging
+from PIL import Image
+import portable_utils
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 
 class Game:
@@ -33,11 +38,30 @@ class Game:
                   self.current_weekly_seconds)
         return int(ret/60) if inMinutes else ret
 
-    def reset(self):
-        self.current_weekly_seconds = 0
-        self.last_reset = datetime.date.today().isoformat()
-        logging.info(
-            f'{self.name} last_reset updated to {self.last_reset}')
+    def hasTimeLeft(self):
+        return self.current_weekly_seconds < self.max_weekly_seconds
 
     def needsReset(self):
         return datetime.date.fromisoformat(self.last_reset) < util.getLastMonday()
+
+    def reset(self):
+        self.current_weekly_seconds = 0
+        self.last_reset = datetime.date.today().isoformat()
+        logger.info(
+            f'{self.name} last_reset updated to {self.last_reset}')
+
+    def getIcon(self):
+        iconPath = f'icons/{self.name}.png'
+        errMsg = f'Error loading file icon for {self.name}'
+        try:
+            return Image.open(iconPath)
+        except FileNotFoundError:
+            try:
+                portable_utils.saveExecutableIcon(self.path, iconPath)
+                return Image.open(iconPath)
+            except Exception as e:
+                logger.error(errMsg)
+                return None
+        except Exception as e:
+            logger.error(errMsg)
+            return None

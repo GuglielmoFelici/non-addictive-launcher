@@ -2,12 +2,10 @@ import json
 from game import Game
 import shutil
 
-DATASOURCE_NAME = 'games.json'
-games = None
+DATASOURCE_NAME = 'sviluppo.json'
 
 shutil.copy(DATASOURCE_NAME, f'{DATASOURCE_NAME}.bak')
 with open(DATASOURCE_NAME) as dataSource:
-    global games
     games = json.load(dataSource)
 
 
@@ -24,4 +22,8 @@ def saveGame(game: Game):
 
 
 def getGames():
+    return [Game(games[name]) for name in games]
+
+
+def getGamesJson():
     return games

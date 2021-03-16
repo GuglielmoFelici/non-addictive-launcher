@@ -6,8 +6,8 @@
             "3"
         ],
         "max_weekly_seconds": 300,
-        "current_weekly_seconds": 298,
-        "total_seconds": 298,
+        "current_weekly_seconds": 301,
+        "total_seconds": 301,
         "last_reset": "2021-03-12"
     },
     "valorant": {
@@ -18,8 +18,8 @@
             "--launch-patchline=live"
         ],
         "max_weekly_seconds": 36000,
-        "current_weekly_seconds": 9741,
-        "total_seconds": 38822,
+        "current_weekly_seconds": 9748,
+        "total_seconds": 38829,
         "last_reset": "2021-03-15"
     }
 }
