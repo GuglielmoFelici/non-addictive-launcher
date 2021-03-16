@@ -7,6 +7,16 @@ from time import sleep
 import ui
 import glob
 import os
+import atexit
+
+
+def exit_handler():
+    # TODO consentire configurazione
+    print('La console si chiuderà tra 10 secondi. Per evitare in futuro che la console si chiuda, lanciare nal.py da un terminale esterno.')
+    sleep(10)
+
+
+atexit.register(exit_handler)
 
 
 logging.basicConfig(level=logging.WARN)

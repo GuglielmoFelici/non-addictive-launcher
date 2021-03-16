@@ -2,7 +2,7 @@ import json
 from game import Game
 import shutil
 
-DATASOURCE_NAME = 'sviluppo.json'
+DATASOURCE_NAME = 'data/sviluppo.json'
 
 shutil.copy(DATASOURCE_NAME, f'{DATASOURCE_NAME}.bak')
 with open(DATASOURCE_NAME) as dataSource:

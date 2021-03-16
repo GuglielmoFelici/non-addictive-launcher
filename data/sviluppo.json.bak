@@ -18,8 +18,8 @@
             "--launch-patchline=live"
         ],
         "max_weekly_seconds": 36000,
-        "current_weekly_seconds": 9748,
-        "total_seconds": 38829,
+        "current_weekly_seconds": 9899,
+        "total_seconds": 38980,
         "last_reset": "2021-03-15"
     }
 }

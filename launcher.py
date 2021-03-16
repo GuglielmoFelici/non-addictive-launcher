@@ -16,8 +16,8 @@ def startGameProcess(game: Game) -> subprocess.Popen:
         logger.info('You had too much ¯\\_(ツ)_/¯')
         return None
     try:
-        logger.info(game.path)
-        p = subprocess.Popen([game.path])  # + game.arguments)
+        logger.info(game.path + " " + str(game.arguments))
+        p = subprocess.Popen([game.path] + game.arguments)
     except FileNotFoundError as e:
         logger.error(
             f"Impossibile trovare l'eseguibile per \"{game.name}\". Verificare il database.")

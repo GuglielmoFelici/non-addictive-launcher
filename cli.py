@@ -17,7 +17,7 @@ game = datasource.getGame(gameName)
 
 if not game:
     fail("The game is not on the list")
-game = launcher.launchGame(game)
+game = launcher.launchGameBlocking(game)
 if not game:
     fail()
 else:
