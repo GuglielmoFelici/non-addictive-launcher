@@ -31,7 +31,7 @@ class GameViewManager:
         }
         self.game = game
 
-    def setWidget(self, key):
+    def hasWidget(self, key):
         return key in self.__view
 
     def getWidgetValue(self, key):
@@ -43,7 +43,7 @@ class GameViewManager:
 
     def updateWidgets(self):
         # TODO cache image
-        if self.setWidget('playButton'):
+        if self.hasWidget('playButton'):
             if self.game.hasTimeLeft() and not self.__view['isPlaying']:
                 icon = playButtonGreen
                 self.__view['playButton']['cursor'] = "hand2"
@@ -54,11 +54,11 @@ class GameViewManager:
             self.__view['playButton']['image'] = icon
             self.__view['playButton'].image = icon
 
-        if self.setWidget('progressBar'):
+        if self.hasWidget('progressBar'):
             self.__view['progressBar']['value'] = (self.game.secondsLeft() /
                                                    self.game.max_weekly_seconds) * 100
 
-        if self.setWidget('timeLeft'):
+        if self.hasWidget('timeLeft'):
             self.__view['timeLeft']['text'] = f'Left: {util.prettyTime(self.game.secondsLeft())}'
 
 
